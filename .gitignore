@@ -1,0 +1,16 @@
+# 1. 最核心的敏感文件
+#/srcs/.env
+
+# 2. 预防本地测试时产生的数据挂载目录
+/data/
+/srcs/data/
+
+# 3. 预防 Nginx 或 MariaDB 产生的本地日志 (如果有)
+*.log
+
+# 4. 操作系统与编辑器产生的无用缓存
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
