@@ -5,6 +5,11 @@ FROM debian:bookworm
 RUN apt-get update -y && apt-get install mariadb-server -y \
     && rm -rf /var/lib/apt/lists/*
 
+# 创建 mysqld 需要的运行目录并设置权限
+RUN mkdir -p /run/mysqld && \
+	chown -R mysql:mysql /run/mysqld && \
+	chmod 777 /run/mysqld
+
 # 替换默认配置
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
