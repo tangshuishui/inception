@@ -6,7 +6,7 @@ all:
 	@cd srcs && docker-compose up -d --build
 
 clean:
-	@cd srcs && docker-compose down
+	@cd srcs && docker-compose down -v
 
 fclean: clean
 	@sudo rm -rf $(DATA_DIR)/wordpress/*

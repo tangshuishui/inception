@@ -4,8 +4,8 @@ set -e
 
 DBDIR="/var/lib/mysql"
 
-# 检测是否是第一次挂载空目录
-if [ ! -d "$DBDIR/mysql" ]; then
+# 检测是否存在数据库文件夹
+if [ ! -d "$DBDIR/$MYSQL_DATABASE" ]; then
   echo "Initializing database directory..."
 
   # 确保 mysql 用户对挂载的 Volume 有绝对所有权
